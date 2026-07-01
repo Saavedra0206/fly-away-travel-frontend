@@ -3,8 +3,6 @@ import axiosClient from "./axiosClient";
 /**
  * POST /users/register (sin protección)
  * Body esperado por el backend: { email, firstName, lastName, password }
- * Si tu backend usa nombres de campo distintos (p. ej. "nombre"/"apellido"),
- * ajusta el objeto que se envía aquí.
  */
 export function registerUser({ email, firstName, lastName, password }) {
   return axiosClient.post("/users/register", {
