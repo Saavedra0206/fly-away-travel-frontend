@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
 
   const isAuthenticated = Boolean(token);
 
-  // Nice to have: al iniciar sesión (o al recargar con un token guardado)
+  
   // intentamos obtener el nombre del usuario autenticado.
   const fetchCurrentUser = useCallback(async () => {
     setLoadingUser(true);
@@ -36,7 +36,7 @@ export function AuthProvider({ children }) {
     if (token && !user) {
       fetchCurrentUser();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, [token]);
 
   async function login({ email, password }) {
