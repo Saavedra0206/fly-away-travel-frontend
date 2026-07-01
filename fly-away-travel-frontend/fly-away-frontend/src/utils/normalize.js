@@ -1,10 +1,4 @@
-/**
- * El PDF del laboratorio no especifica el nombre exacto de cada campo del
- * DTO (usa términos en español como "número", "salida", "asientos").
- * Estas funciones buscan el valor en varias claves posibles para que la UI
- * funcione sin importar la convención exacta que use tu backend.
- * Si conoces los nombres reales, puedes simplificar estas funciones.
- */
+
 
 function pick(obj, keys, fallback = undefined) {
   for (const key of keys) {
