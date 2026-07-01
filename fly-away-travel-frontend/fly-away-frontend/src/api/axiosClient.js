@@ -1,11 +1,7 @@
 import axios from "axios";
 
-/**
- * Base URL del backend.
- * Configúrala en un archivo .env (copia .env.example -> .env) con:
- *   VITE_API_URL=http://localhost:8080
- */
-const baseURL = import.meta.env.VITE_API_URL || "http://localhost:8080";
+
+const baseURL = "http://localhost:8080";
 
 const axiosClient = axios.create({
   baseURL,
@@ -37,11 +33,7 @@ axiosClient.interceptors.response.use(
   }
 );
 
-/**
- * Extrae un mensaje de error legible desde una respuesta de axios,
- * cubriendo distintos formatos comunes en backends Spring Boot
- * (message, error, string plano, mapa de errores de validación).
- */
+
 export function extractErrorMessage(error, fallback = "Ocurrió un error inesperado. Intenta de nuevo.") {
   const data = error?.response?.data;
 
